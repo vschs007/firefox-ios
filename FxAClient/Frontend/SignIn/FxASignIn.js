@@ -8,7 +8,6 @@
  */
 
 "use strict";
-
 function handleAccountsCommand(evt) {
     webkit.messageHandlers.accountsCommandHandler.postMessage({ type: evt.type, detail: evt.detail });
 };
