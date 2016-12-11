@@ -7,7 +7,6 @@ import Foundation
 import FxA
 import Shared
 import Deferred
-
 import XCTest
 
 class MockFxALoginClient: FxALoginClient {
@@ -50,7 +49,6 @@ class MockFxALoginClientAfterPasswordChange: MockFxALoginClient {
         let response = FxAClientError.Remote(RemoteError(code: 401, errno: 103, error: "Bad auth", message: "Bad auth message", info: "Bad auth info"))
         return Deferred(value: Maybe(failure: response))
     }
-
     override func sign(sessionToken: NSData, publicKey: PublicKey) -> Deferred<Maybe<FxASignResponse>> {
         let response = FxAClientError.Remote(RemoteError(code: 401, errno: 103, error: "Bad auth", message: "Bad auth message", info: "Bad auth info"))
         return Deferred(value: Maybe(failure: response))
